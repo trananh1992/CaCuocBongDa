@@ -22,6 +22,11 @@
         <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-cookies.min.js"></script>
+    <script src="Scripts/angular-messages.min.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
 </head>
 <body class="fix-header fix-sidebar">
     <!-- Preloader - style you can find in spinners.css -->
@@ -40,24 +45,29 @@
                         <div class="login-content card">
                             <div class="login-form">
                                 <h4>ĐĂNG KÝ</h4>
-                                <form ng-submit="DangKy()">
+                                <form ng-submit="DangKy()" name="myForm">
                                     <div class="form-group">
                                         <label>TÊN TÀI KHOẢN</label>
-                                        <input type="text" class="form-control" placeholder="Tên tài khoản">
+                                        <input type="text" class="form-control" placeholder="Tên tài khoản" ng-model="TenTaiKhoan" name="tentaikhoan">
                                     </div>
                                     <div class="form-group">
                                         <label>HỌ VÀ TÊN</label>
-                                        <input type="email" class="form-control" placeholder="Họ và tên">
+                                        <input type="text" class="form-control" placeholder="Họ và tên" ng-model="HoVaTen">
                                     </div>
                                     <div class="form-group">
                                         <label>EMAIL</label>
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        <input type="email" class="form-control" placeholder="Email" ng-model="Email" name="myField" required minlength="5">
+                                        <div ng-messages="myForm.myField.$error" role="alert">
+                                            <div ng-message="required">Please enter a value for this field.</div>
+                                            <div ng-message="email">This field must be a valid email address.</div>
+                                            <div ng-message="minlength">This field can be at most 15 characters long.</div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label>MẬT KHẨU</label>
-                                        <input type="password" class="form-control" placeholder="Mật Khẩu">
+                                        <input type="password" class="form-control" placeholder="Mật Khẩu" ng-model="MatKhau">
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Đăng Ký</button>
+                                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" id="btnDangky">Đăng Ký</button>
                                     <div class="register-link m-t-15 text-center">
                                         <p>Bạn đã có tài khoản ? <a href="@Url.Action("Login")"> Đăng Nhập</a></p>
                                     </div>
@@ -73,9 +83,7 @@
     <!-- End Wrapper -->
     <!-- All Jquery -->
     <script src="Scripts/lib/jquery/jquery.min.js"></script>
-    <script src="Scripts/angular.min.js"></script>
-    <script src="Scripts/angular-route.min.js"></script>
-    <script src="Scripts/angular-cookies.min.js"></script>
+    
     <!-- Bootstrap tether Core JavaScript -->
     <script src="Scripts/lib/bootstrap/js/popper.min.js"></script>
     <script src="Scripts/lib/bootstrap/js/bootstrap.min.js"></script>
@@ -87,6 +95,8 @@
     <script src="Scripts/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="Scripts/custom.min.js"></script>
+    <script src="Scripts/lib/toastr/toastr.min.js"></script>
+
     <script src="Scripts/Account/Login.js"></script>
     <script>
     toastr.options = {

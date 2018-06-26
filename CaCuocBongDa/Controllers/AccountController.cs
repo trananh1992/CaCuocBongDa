@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using CaCuocBongDa.Models;
+using Newtonsoft.Json.Linq;
 
 namespace CaCuocBongDa.Controllers
 {
@@ -45,7 +47,15 @@ namespace CaCuocBongDa.Controllers
             {
                 FormsAuthentication.SetAuthCookie(user.ToLower(), Checked);
             }
-        }  
+        }
 
+        [HttpPost]
+        public ActionResult DangKyTaiKhoan(User u)
+        {
+            return Json(new
+            {
+                code = 1
+            }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
