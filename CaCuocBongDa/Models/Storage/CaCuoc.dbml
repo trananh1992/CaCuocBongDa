@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CaCuocBongDa" Class="CaCuocDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQL2008;Initial Catalog=CaCuocBongDa;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CaCuocBongDaConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.CaCuoc_InsertOrUpdate" Method="CaCuoc_InsertOrUpdate">
+    <Parameter Name="InputValue" Parameter="inputValue" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Type" Parameter="type" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CaCuoc_InsertOrUpdateResult">
+      <Column Name="Result" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
