@@ -27,5 +27,10 @@ namespace CaCuocBongDa.Models
                 return ex.Message;
             }
         }
+
+        public List<CaCuoc_GetTaiKhoanResult> GetTaiKhoan(int id, string user, int type)
+        {
+            return cacuoc.CaCuoc_GetTaiKhoan(id, user, type).ToList();
+        }
     }
 }

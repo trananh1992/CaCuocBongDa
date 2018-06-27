@@ -13,6 +13,7 @@
     <title>Đăng Ký</title>
     <!-- Bootstrap Core CSS -->
     <link href="~/Content/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/lib/toastr/toastr.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="~/Content/css/helper.css" rel="stylesheet">
     <link href="~/Content/css/style.css" rel="stylesheet">
@@ -58,9 +59,9 @@
                                         <label>EMAIL</label>
                                         <input type="email" class="form-control" placeholder="Email" ng-model="Email" name="myField" required minlength="5">
                                         <div ng-messages="myForm.myField.$error" role="alert">
-                                            <div ng-message="required">Please enter a value for this field.</div>
-                                            <div ng-message="email">This field must be a valid email address.</div>
-                                            <div ng-message="minlength">This field can be at most 15 characters long.</div>
+                                            <div ng-message="required" class="alert alert-danger">Please enter a value for this field.</div>
+                                            <div ng-message="email" class="alert alert-danger">This field must be a valid email address.</div>
+                                            <div ng-message="minlength" class="alert alert-danger">This field can be at most 15 characters long.</div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -99,24 +100,24 @@
 
     <script src="Scripts/Account/Login.js"></script>
     <script>
-    toastr.options = {
-        "positionClass": "toast-bottom-right",
-        timeOut: 5000,
-        "closeButton": true,
-        "debug": false,
-        "newestOnTop": true,
-        "progressBar": true,
-        "preventDuplicates": true,
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut",
-        "tapToDismiss": false
-    };
+        toastr.options = {
+            "positionClass": "toast-bottom-right",
+            timeOut: 5000,
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut",
+            "tapToDismiss": false
+        };
     </script>
 
 

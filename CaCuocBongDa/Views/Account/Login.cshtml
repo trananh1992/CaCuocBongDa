@@ -10,9 +10,10 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="~/Content/images/favicon.png">
-    <title>Đăng nhập</title>
+    <title>Bet888 |@ViewBag.Title</title>
     <!-- Bootstrap Core CSS -->
     <link href="~/Content/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/lib/toastr/toastr.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="~/Content/css/helper.css" rel="stylesheet">
     <link href="~/Content/css/style.css" rel="stylesheet">
@@ -22,6 +23,11 @@
         <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-cookies.min.js"></script>
+    <script src="Scripts/angular-messages.min.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
 </head>
 <body class="fix-header fix-sidebar">
     <!-- Preloader - style you can find in spinners.css -->
@@ -33,21 +39,21 @@
     <!-- Main wrapper  -->
     <div id="main-wrapper">
 
-        <div class="unix-login">
-            <div class="container-fluid">
+        <div class="unix-login" ng-app="ca-cuoc">
+            <div class="container-fluid" ng-controller="mainController">
                 <div class="row justify-content-center">
                     <div class="col-lg-4">
                         <div class="login-content card">
                             <div class="login-form">
                                 <h4>ĐĂNG NHẬP</h4>
-                                <form>
+                                <form ng-submit="Login()" class="ng-dirty ng-valid-parse ng-valid ng-valid-required">
                                     <div class="form-group">
                                         <label>Tên tài khoản</label>
-                                        <input type="text" class="form-control" placeholder="Tên tài khoản">
+                                        <input type="text" class="form-control" placeholder="Tên tài khoản" ng-model="TenTaiKhoan" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Mật khẩu</label>
-                                        <input type="password" class="form-control" placeholder="Mật khẩu">
+                                        <input type="password" class="form-control" placeholder="Mật khẩu" ng-model="MatKhau" required>
                                     </div>
                                     <div class="checkbox">
                                         <label>
@@ -74,10 +80,6 @@
     <!-- End Wrapper -->
     <!-- All Jquery -->
     <script src="Scripts/lib/jquery/jquery.min.js"></script>
-    <script src="Scripts/angular.min.js"></script>
-    <script src="Scripts/angular-route.min.js"></script>
-    <script src="Scripts/angular-cookies.min.js"></script>
-
     <!-- Bootstrap tether Core JavaScript -->
     <script src="Scripts/lib/bootstrap/js/popper.min.js"></script>
     <script src="Scripts/lib/bootstrap/js/bootstrap.min.js"></script>
@@ -89,7 +91,27 @@
     <script src="Scripts/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <!--Custom JavaScript -->
     <script src="Scripts/custom.min.js"></script>
+    <script src="Scripts/lib/toastr/toastr.min.js"></script>
     <script src="Scripts/Account/Login.js"></script>
-
+    <script>
+        toastr.options = {
+            "positionClass": "toast-bottom-right",
+            timeOut: 5000,
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut",
+            "tapToDismiss": false
+        };
+    </script>
 </body>>
 </html>
