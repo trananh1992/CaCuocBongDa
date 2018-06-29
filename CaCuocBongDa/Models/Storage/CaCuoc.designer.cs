@@ -75,6 +75,13 @@ namespace CaCuocBongDa.Models.Storage
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD, userName, type);
 			return ((ISingleResult<CaCuoc_GetTaiKhoanResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CaCuoc_InsertOrUpdateMatch")]
+		public ISingleResult<CaCuoc_InsertOrUpdateMatchResult> CaCuoc_InsertOrUpdateMatch([global::System.Data.Linq.Mapping.ParameterAttribute(Name="InputValue", DbType="NVarChar(MAX)")] string inputValue, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Type", DbType="Int")] System.Nullable<int> type)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), inputValue, type);
+			return ((ISingleResult<CaCuoc_InsertOrUpdateMatchResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class CaCuoc_InsertOrUpdateResult
@@ -340,6 +347,50 @@ namespace CaCuocBongDa.Models.Storage
 				if ((this._DateWithdraw != value))
 				{
 					this._DateWithdraw = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CaCuoc_InsertOrUpdateMatchResult
+	{
+		
+		private int _Result;
+		
+		private int _IdMatch;
+		
+		public CaCuoc_InsertOrUpdateMatchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Result", DbType="Int NOT NULL")]
+		public int Result
+		{
+			get
+			{
+				return this._Result;
+			}
+			set
+			{
+				if ((this._Result != value))
+				{
+					this._Result = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdMatch", DbType="Int NOT NULL")]
+		public int IdMatch
+		{
+			get
+			{
+				return this._IdMatch;
+			}
+			set
+			{
+				if ((this._IdMatch != value))
+				{
+					this._IdMatch = value;
 				}
 			}
 		}

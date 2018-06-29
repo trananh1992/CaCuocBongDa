@@ -32,5 +32,18 @@ namespace CaCuocBongDa.Models
         {
             return cacuoc.CaCuoc_GetTaiKhoan(id, user, type).ToList();
         }
+
+        public string InsertOrUpdateMatch(string xml, int type)
+        {
+            try
+            {
+                cacuoc.CaCuoc_InsertOrUpdateMatch(xml, type);
+                return "";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
     }
 }
